@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+.asec {
+  padding: 44px 27px;
+  border-radius: 23px;
+  background-color: #e6e6e6;
+  box-shadow: -3px -3px 4px #fff, 3px 3px 7px #00000060;
+  overflow: hidden;
+}
+
+.btn-container {
+  display: flex;
+  overflow-x: auto;
+  padding: 14px 0;
+  margin: 31px 0;
+  background: linear-gradient(to right, #c1c1c150 0%, #fff 50%, #c1c1c150 100%);
+  border-radius: 8px;
+  scroll-behavior: smooth;
+  gap: 16px;
+  scrollbar-width: none;
+}
+
+.btn-container::-webkit-scrollbar {
+  display: none;
+}
+
+.btn-container button {
+  padding: 13px 25px;
+  background-color: #fff;
+  box-shadow: 0px 0px 4px #0000002d;
+  border-radius: 7px;
+  border: none;
+  font: 500 0.9em 'Inter';
+  cursor: pointer;
+  opacity: 0.5;
+  transition: 0.3s;
+  flex: 0 0 auto;
+}
+
+.btn-container button.active {
+  opacity: 1;
+  transform: scale(1.1);
+  font-weight: bold;
+}
+
+  </style>
+</head>
+<body>
+  <article class="asec">
+    <h2>Entenda um pouco mais sobre esse projeto dos guris!</h2>
+    <div class="btn-container" id="btn-container">
+      <button>Quais os Objetivos</button>
+      <button class="active">O que estão praticando</button>
+      <button>Conhecimentos</button>
+    </div>
+  </article>
+  
+  <script>
+    const container = document.getElementById('btn-container');
+    const buttons = container.querySelectorAll('button');
+  
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        // Remove destaque dos outros
+        buttons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+  
+        // Centraliza o botão
+        const containerRect = container.getBoundingClientRect();
+        const buttonRect = button.getBoundingClientRect();
+        const offset = buttonRect.left - containerRect.left - (container.offsetWidth / 2 - button.offsetWidth / 2);
+        
+        container.scrollBy({ left: offset, behavior: 'smooth' });
+      });
+    });
+  </script>
+  
+  
+</body>
+</html>
