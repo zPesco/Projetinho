@@ -56,20 +56,20 @@ document.addEventListener('DOMContentLoaded', () => {
           <p class="pname">Projetinho dos Gurís &REG;</p>
           <div class="flinks">
             <a href="mailto:loscornoshermanos@gmail.com" id="mailto">
-              <img src="${basePath}media/img/mailto.png" class="imgft4">
+              <img src="media/img/mailto.png" class="imgft4">
             </a>
           </div>
         </div>
         <div class="footer">
           <div class="lay">
             <div>
-              <img src="${basePath}media/img/sci.png" class="imgft1">
+              <img src="media/img/sci.png" class="imgft1">
             </div>
             <div>
-              <img src="${basePath}media/img/ars.png" class="imgft2">
+              <img src="media/img/ars.png" class="imgft2">
             </div>
             <div>
-              <img src="${basePath}media/img/dmae.png" class="imgft3">
+              <img src="media/img/dmae.png" class="imgft3">
             </div>
           </div>
         </div>
